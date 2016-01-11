@@ -1,1 +1,14 @@
 @import 'import/normalize';
+@import 'import/fonts';
+@import 'import/main';
+@import 'import/slick';
+@import 'import/slick-theme';
+@import 'import/jquery.fancybox';
+@import 'import/jquery.fancybox-thumbs';
+@import 'import/ato-styles';
+@import 'import/reklamation-styles';
+@import 'import/widgets';
+
+.fancybox-margin {
+  margin-right: 17px;
+}
