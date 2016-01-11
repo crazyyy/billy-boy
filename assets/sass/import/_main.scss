@@ -1,15 +1,13 @@
 /*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
 html {
-  color: #222;
   font-size: 1em;
   line-height: 1.4;
+
+  color: #222;
 }
 
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
+::-moz-selection,
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -17,11 +15,13 @@ html {
 
 hr {
   display: block;
+
   height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0;
+
+  border: 0;
+  border-top: 1px solid #ccc;
 }
 
 audio,
@@ -34,9 +34,10 @@ video {
 }
 
 fieldset {
-  border: 0;
   margin: 0;
   padding: 0;
+
+  border: 0;
 }
 
 textarea {
@@ -44,15 +45,17 @@ textarea {
 }
 
 .browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
+  margin: .2em 0;
+  padding: .2em 0;
+
   color: #000;
-  padding: 0.2em 0;
+  background: #ccc;
 }
 
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
+
 body {
   font: 16px/26px Helvetica, Helvetica Neue, Arial;
 }
@@ -65,6 +68,7 @@ body {
 /* ===================
     ALL: Orange Theme
    =================== */
+
 .header-container {
   border-bottom: 20px solid #e44d26;
 }
@@ -87,56 +91,63 @@ body {
 /* ==============
     MOBILE: Menu
    ============== */
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
 
-nav a {
-  display: block;
-  margin-bottom: 10px;
-  padding: 15px 0;
-  text-align: center;
-  text-decoration: none;
-  font-weight: bold;
-  color: white;
-  background: #e44d26;
-}
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
 
-nav a:hover,
-nav a:visited {
-  color: white;
-}
+    list-style-type: none;
+  }
+  a {
+    font-weight: bold;
 
-nav a:hover {
-  text-decoration: underline;
+    display: block;
+
+    margin-bottom: 10px;
+    padding: 15px 0;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: white;
+    background: #e44d26;
+    &:hover,
+    &:visited {
+      color: white;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 /* ==============
     MOBILE: Main
    ============== */
+
 .main {
   padding: 30px 0;
-}
+  article h1 {
+    font-size: 2em;
+  }
+  aside {
+    padding: 0 5% 10px;
 
-.main article h1 {
-  font-size: 2em;
-}
-
-.main aside {
-  color: white;
-  padding: 0px 5% 10px;
+    color: white;
+  }
 }
 
 .footer-container footer {
-  color: white;
   padding: 20px 0;
+
+  color: white;
 }
 
 /* ===============
     ALL: IE Fixes
    =============== */
+
 .ie7 .title {
   padding-top: 20px;
 }
@@ -151,37 +162,43 @@ nav a:hover {
   /* ====================
       INTERMEDIATE: Menu
      ==================== */
-  nav a {
-    float: left;
-    width: 27%;
-    margin: 0 1.7%;
-    padding: 25px 2%;
-    margin-bottom: 0;
-  }
 
-  nav li:first-child a {
-    margin-left: 0;
-  }
+  nav {
+    a {
+      float: left;
 
-  nav li:last-child a {
-    margin-right: 0;
+      width: 27%;
+      margin: 0 1.7%;
+      margin-bottom: 0;
+      padding: 25px 2%;
+    }
+    li {
+      &:first-child a {
+        margin-left: 0;
+      }
+      &:last-child a {
+        margin-right: 0;
+      }
+    }
+    ul li {
+      display: inline;
+    }
   }
 
   /* ========================
       INTERMEDIATE: IE Fixes
      ======================== */
-  nav ul li {
-    display: inline;
-  }
 
   .oldie nav a {
-    margin: 0 0.7%;
+    margin: 0 .7%;
   }
 }
+
 @media only screen and (min-width: 768px) {
   /* ====================
       WIDE: CSS3 Effects
      ==================== */
+
   .header-container,
   .main aside {
     box-shadow: 0 5px 10px #aaa;
@@ -190,119 +207,145 @@ nav a:hover {
   /* ============
       WIDE: Menu
      ============ */
+
   .title {
     float: left;
   }
 
   nav {
     float: right;
+
     width: 38%;
   }
 
   /* ============
       WIDE: Main
      ============ */
-  .main article {
-    float: left;
-    width: 57%;
-  }
 
-  .main aside {
-    float: right;
-    width: 28%;
+  .main {
+    article {
+      float: left;
+
+      width: 57%;
+    }
+    aside {
+      float: right;
+
+      width: 28%;
+    }
   }
 }
+
 @media only screen and (min-width: 1140px) {
   /* ===============
       Maximal Width
      =============== */
+
   .wrapper {
     width: 1026px;
     /* 1140px - 10% for margins */
     margin: 0 auto;
   }
 }
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
 .hidden {
   display: none !important;
   visibility: hidden;
 }
 
 .visuallyhidden {
-  border: 0;
+  position: absolute;
+
+  overflow: hidden;
   clip: rect(0 0 0 0);
+
+  width: 1px;
   height: 1px;
   margin: -1px;
-  overflow: hidden;
   padding: 0;
-  position: absolute;
-  width: 1px;
-}
 
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto;
+  border: 0;
+  &.focusable {
+    &:active,
+    &:focus {
+      position: static;
+
+      overflow: visible;
+      clip: auto;
+
+      width: auto;
+      height: auto;
+      margin: 0;
+    }
+  }
 }
 
 .invisible {
   visibility: hidden;
 }
 
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-}
-
 .clearfix {
   *zoom: 1;
+  &:before {
+    display: table;
+
+    content: ' ';
+  }
+  &:after {
+    display: table;
+    clear: both;
+
+    content: ' ';
+  }
 }
 
 /* ==========================================================================
    Print styles
    ========================================================================== */
 @media print {
-  *,
-  *:before,
-  *:after {
-    background: transparent !important;
+  * {
     color: #000 !important;
+    background: transparent !important;
     box-shadow: none !important;
     text-shadow: none !important;
+    &:before,
+    &:after {
+      color: #000 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
   }
 
-  a,
-  a:visited {
+  a {
     text-decoration: underline;
-  }
-
-  a[href]:after {
-    content: " (" attr(href) ")";
+    &:visited {
+      text-decoration: underline;
+    }
+    &[href]:after {
+      content: ' (' attr(href) ')';
+    }
   }
 
   abbr[title]:after {
-    content: " (" attr(title) ")";
+    content: ' (' attr(title) ')';
   }
 
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
-    content: "";
+  a {
+    &[href^='#']:after,
+    &[href^='javascript:']:after {
+      content: '';
+    }
   }
 
   pre,
   blockquote {
     border: 1px solid #999;
+
     page-break-inside: avoid;
   }
 
@@ -310,13 +353,14 @@ nav a:hover {
     display: table-header-group;
   }
 
-  tr,
-  img {
+  tr {
     page-break-inside: avoid;
   }
 
   img {
     max-width: 100% !important;
+
+    page-break-inside: avoid;
   }
 
   p,

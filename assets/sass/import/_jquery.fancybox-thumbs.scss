@@ -1,0 +1,59 @@
+#fancybox-thumbs {
+  position: fixed;
+  z-index: 8050;
+  left: 0;
+
+  overflow: hidden;
+
+  width: 100%;
+  &.bottom {
+    bottom: 2px;
+  }
+  &.top {
+    top: 2px;
+  }
+  ul {
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+    li {
+      float: left;
+
+      padding: 1px;
+
+      opacity: .5;
+      &.active {
+        padding: 0;
+
+        opacity: .75;
+        border: 1px solid #fff;
+      }
+      &:hover {
+        opacity: 1;
+      }
+      a {
+        position: relative;
+
+        display: block;
+        overflow: hidden;
+
+        border: 1px solid #222;
+        outline: none;
+        background: #111;
+      }
+      img {
+        position: relative;
+
+        display: block;
+
+        max-width: none;
+        padding: 0;
+
+        border: 0;
+      }
+    }
+  }
+}

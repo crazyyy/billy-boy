@@ -1,0 +1,313 @@
+/* The main calendar widget.  DIV containing a table. */
+
+.calendar {
+  font-family: tahoma,verdana,sans-serif;
+  font-size: 11px;
+
+  position: relative;
+
+  display: none;
+
+  cursor: default;
+
+  color: #000;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  border-left: 2px solid #fff;
+  background: #d4d0c8;
+  table {
+    font-family: tahoma,verdana,sans-serif;
+    font-size: 11px;
+
+    cursor: default;
+
+    color: #000;
+    border-top: 1px solid #000;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #000;
+    background: #d4d0c8;
+  }
+  .button {
+    padding: 1px;
+    /* "<<", "<", ">", ">>" buttons have this class */
+
+    text-align: center;
+
+    border-top: 1px solid #fff;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #fff;
+  }
+  .nav {
+    background: transparent url(menuarrow.gif) no-repeat 100% 100%;
+  }
+  thead {
+    .title {
+      /* This holds the current "month, year" */
+      font-weight: bold;
+
+      padding: 1px;
+
+      text-align: center;
+
+      color: #fff;
+      border: 1px solid #000;
+      background: #848078;
+    }
+    .headrow {
+      /* Row <TR> containing navigation buttons */
+    }
+    .daynames {
+      /* Row <TR> containing the day names */
+    }
+    .name {
+      padding: 2px;
+
+      text-align: center;
+      /* Cells <TD> containing the day names */
+
+      border-bottom: 1px solid #000;
+      background: #f4f0e8;
+    }
+    .weekend {
+      /* How a weekend day name shows in header */
+      color: #f00;
+    }
+    .hilite {
+      padding: 0;
+      /* How do the buttons in header appear when hover */
+
+      border-top: 2px solid #fff;
+      border-right: 2px solid #000;
+      border-bottom: 2px solid #000;
+      border-left: 2px solid #fff;
+      background-color: #e4e0d8;
+    }
+    .active {
+      /* Active (pressed) buttons in header */
+      padding: 2px 0 0 2px;
+
+      border-top: 1px solid #000;
+      border-right: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      border-left: 1px solid #000;
+      background-color: #c4c0b8;
+    }
+  }
+  tbody .day {
+    /* Cells <TD> containing month days dates */
+    width: 2em;
+    padding: 2px 4px 2px 2px;
+
+    text-align: right;
+    &.othermonth {
+      font-size: 80%;
+
+      color: #aaa;
+      &.oweekend {
+        color: #faa;
+      }
+    }
+  }
+  table .wn {
+    padding: 2px 3px 2px 2px;
+
+    border-right: 1px solid #000;
+    background: #f4f0e8;
+  }
+  tbody {
+    .rowhilite td {
+      background: #e4e0d8;
+      &.wn {
+        background: #d4d0c8;
+      }
+    }
+    td {
+      &.hilite {
+        /* Hovered cells <TD> */
+        padding: 1px 3px 1px 1px;
+
+        border-top: 1px solid #fff;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+        border-left: 1px solid #fff;
+      }
+      &.active {
+        /* Active (pressed) cells <TD> */
+        padding: 2px 2px 0 2px;
+
+        border-top: 1px solid #000;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        border-left: 1px solid #000;
+      }
+      &.selected {
+        /* Cell showing selected date */
+        font-weight: bold;
+
+        padding: 2px 2px 0 2px;
+
+        border-top: 1px solid #000;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        border-left: 1px solid #000;
+        background: #e4e0d8;
+      }
+      &.weekend {
+        /* Cells showing weekend days */
+        color: #f00;
+      }
+      &.today {
+        /* Cell showing today date */
+        font-weight: bold;
+
+        color: #00f;
+      }
+    }
+    .disabled {
+      color: #999;
+    }
+    .emptycell {
+      /* Empty cells (the best is to hide them) */
+      visibility: hidden;
+    }
+    .emptyrow {
+      /* Empty row (some months need less than 6 rows) */
+      display: none;
+    }
+  }
+  tfoot {
+    .footrow {
+      /* The <TR> in footer (only one right now) */
+    }
+    .ttip {
+      padding: 1px;
+
+      text-align: center;
+
+      color: #fff;
+      border: 1px solid #000;
+      /* Tooltip (status bar) cell <TD> */
+      background: #f4f0e8;
+      background: #848078;
+    }
+    .hilite {
+      padding: 1px;
+      /* Hover style for buttons in footer */
+
+      border-top: 1px solid #fff;
+      border-right: 1px solid #000;
+      border-bottom: 1px solid #000;
+      border-left: 1px solid #fff;
+      background: #e4e0d8;
+    }
+    .active {
+      /* Active (pressed) style for buttons in footer */
+      padding: 2px 0 0 2px;
+
+      border-top: 1px solid #000;
+      border-right: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      border-left: 1px solid #000;
+    }
+  }
+  .combo {
+    font-size: 90%;
+
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    width: 4em;
+    padding: 1px;
+
+    cursor: default;
+
+    border-top: 1px solid #fff;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #fff;
+    background: #e4e0d8;
+    .label {
+      padding: 1px;
+
+      text-align: center;
+    }
+    .label-IEfix {
+      width: 4em;
+      padding: 1px;
+
+      text-align: center;
+    }
+    .active {
+      padding: 0;
+
+      border-top: 1px solid #000;
+      border-right: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      border-left: 1px solid #000;
+      background: #c4c0b8;
+    }
+    .hilite {
+      color: #fea;
+      background: #048;
+    }
+  }
+  td.time {
+    padding: 1px 0;
+
+    text-align: center;
+
+    border-top: 1px solid #000;
+    background-color: #f4f0e8;
+    .hour,
+    .minute {
+      font-weight: bold;
+
+      padding: 0 3px 0 4px;
+
+      border: 1px solid #889;
+      background-color: #fff;
+    }
+    .ampm {
+      font-weight: bold;
+
+      padding: 0 3px 0 4px;
+
+      text-align: center;
+
+      border: 1px solid #889;
+      background-color: #fff;
+    }
+    .colon {
+      font-weight: bold;
+
+      padding: 0 2px 0 3px;
+    }
+    span {
+      &.hilite {
+        color: #fff;
+        border-color: #000;
+        background-color: #766;
+      }
+      &.active {
+        color: #0f0;
+        border-color: #f00;
+        background-color: #000;
+      }
+    }
+  }
+}
+
+/* Header part -- contains navigation buttons and day names. */
+
+/* The body part -- contains all the days in month. */
+
+/* The footer part -- status bar and "Close" button */
+
+/* Combo boxes (menus that display months/years for direct selection) */

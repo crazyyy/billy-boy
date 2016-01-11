@@ -1,0 +1,132 @@
+#reklamation-wrapper #response > figure figcaption:after,
+.reklamation-orders:after {
+  display: block;
+  clear: both;
+
+  content: '';
+}
+
+@font-face {
+  font-family: AvantGardeGothicITCW02Bk;
+
+  src: url(../fonts/AvantGardeGothicITC.eot);
+  src: url(../fonts/AvantGardeGothicITC.eot?#iefix) format('embedded-opentype'), url(../fonts/AvantGardeGothicITC.woff2) format('woff2'), url(../fonts/AvantGardeGothicITC.woff) format('woff'), url(../fonts/AvantGardeGothicITC.ttf) format('truetype');
+}
+
+#login-form-guest #send2 {
+  float: right;
+}
+
+#reklamation-wrapper {
+  width: 640px;
+  margin: 0 auto;
+  .account-login {
+    width: 640px;
+    margin: 0;
+  }
+  #response {
+    float: left;
+    > figure {
+      margin-bottom: 20px;
+      figcaption {
+        font-family: MiloSerifWeb;
+
+        margin-top: 10px;
+        padding-left: 10px;
+
+        text-align: center;
+        > span {
+          font-family: 'Open Sans',sans-serif;
+          font-size: 14px;
+          line-height: 1.4em;
+
+          float: left;
+
+          width: 165px;
+          margin-right: 50px;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.reklamation-orders {
+  margin: 0 0 12px;
+  padding: 10px;
+
+  background-color: #1b1b1b;
+  aside {
+    float: left;
+
+    width: 100%;
+    max-width: 420px;
+    > p {
+      font-size: 14px;
+
+      display: inline-block;
+
+      margin: 20px 0;
+    }
+  }
+  .order-info-wrapper {
+    margin-bottom: 20px;
+    p {
+      margin: 0;
+    }
+  }
+  h2 {
+    font-weight: 400;
+
+    margin: 0 0 25px;
+  }
+  p > span:first-child {
+    display: inline-block;
+
+    min-width: 140px;
+  }
+  .bill-address-wrapper,
+  .delivery-address-wrapper {
+    float: left;
+
+    width: 250px;
+  }
+  .bill-address-wrapper > p,
+  .delivery-address-wrapper > p {
+    margin: 5px 0 0;
+    padding-left: 17px;
+  }
+  .bill-address-wrapper {
+    margin-right: 40px;
+  }
+  .button {
+    line-height: 35px;
+
+    display: inline-block;
+
+    width: 200px;
+    height: 35px;
+
+    text-align: center;
+
+    color: #fff;
+    border: 1px solid #64b32c;
+    border-radius: 2px;
+    background-color: #64b32c;
+    &:hover {
+      color: #64b32c;
+      border-color: #fff;
+      background: #fff;
+    }
+  }
+  .dpdinfo {
+    font-size: 12px;
+
+    display: inline-block;
+
+    margin: 0 0 15px;
+    padding: 3px;
+  }
+}
