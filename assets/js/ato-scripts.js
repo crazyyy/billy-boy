@@ -730,9 +730,13 @@ bb.Navigation.prototype = (function() {
 bb.Ajax = (function() {
 
   var config = {
-    URL_getSCQuantity: '/ajx/index',
-    URL_getMiniCart: '/ajx/index/minicart',
-    URL_getWishlistQuantity: '/ajx/index/wishlist'
+    URL_getSCQuantity: '',
+    URL_getMiniCart: '',
+    URL_getWishlistQuantity: ''
+    /* errored */
+    // URL_getSCQuantity: '/ajx/index',
+    // URL_getMiniCart: '/ajx/index/minicart',
+    // URL_getWishlistQuantity: '/ajx/index/wishlist'
   };
   var searchAutocompleteCall;
 
